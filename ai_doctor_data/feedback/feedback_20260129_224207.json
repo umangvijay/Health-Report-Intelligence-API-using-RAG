@@ -1,0 +1,9 @@
+{
+  "query": "very good",
+  "response": "good",
+  "feedback_type": "general",
+  "rating": 2,
+  "timestamp": "2026-01-29T22:42:07.764770",
+  "id": "feedback_20260129_224207",
+  "patient_id": "demo"
+}

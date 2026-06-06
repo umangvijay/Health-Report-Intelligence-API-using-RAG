@@ -1,0 +1,119 @@
+# AI Doctor Configuration
+api:
+  huggingface_token: "YOUR_HF_API_TOKEN"  # Get from https://huggingface.co/settings/tokens
+  gemini_api_key: "YOUR_GEMINI_API_KEY"   # Get from https://makersuite.google.com/app/apikey
+
+models:
+  # Hugging Face Token (required for private models)
+  huggingface_token: "YOUR_HF_API_TOKEN"  # Get from https://huggingface.co/settings/tokens
+  
+  # Language Models (NLP)
+  clinical_bert:
+    model_id: "medicalai/Clinical-BERT"
+    enabled: true
+    use_case: "Clinical text understanding"
+    size: "340MB"
+  
+  biobert:
+    model_id: "dmis-lab/biobert-base-cased-v1.2"
+    enabled: true
+    use_case: "Medical entity extraction"
+    size: "410MB"
+  
+  pubmedbert:
+    model_id: "microsoft/PubMedBERT"
+    enabled: true
+    use_case: "Biomedical classification"
+    size: "420MB"
+  
+  scibert:
+    model_id: "allenai/scibert_scivocab_cased"
+    enabled: true
+    use_case: "Scientific text"
+    size: "410MB"
+  
+  biogpt:
+    model_id: "microsoft/biogpt"
+    enabled: true
+    use_case: "Biomedical text generation"
+    size: "350MB"
+  
+  # Large Language Models
+  mistral_7b:
+    model_id: "mistralai/Mistral-7B-Instruct-v0.3"
+    enabled: true
+    quantized: true
+    use_case: "General medical LLM"
+    size: "7B params"
+    max_length: 4096
+    temperature: 0.6
+  
+  llama2_7b:
+    model_id: "meta-llama/Llama-2-7b-chat-hf"
+    enabled: false  # Requires Meta approval
+    quantized: true
+    use_case: "General medical LLM"
+    size: "7B params"
+    max_length: 4096
+    temperature: 0.6
+  
+  meditron_70b:
+    model_id: "epfl-llm/meditron-70b"
+    enabled: false  # Very large, requires significant resources
+    quantized: true
+    use_case: "Medical LLM (70B)"
+    size: "70B params"
+    max_length: 4096
+    temperature: 0.6
+  
+  # Vision Models
+  vision:
+    xray_model: "microsoft/resnet-50"
+    skin_model: "google/vit-base-patch16-224"
+    biomedclip: "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224"
+    use_api: false  # Use local models if available
+  
+  # Additional BioBERT variants
+  biobert_v1_1:
+    model_id: "dmis-lab/biobert-base-cased-v1.1"
+    enabled: false
+    use_case: "Medical entity extraction (v1.1)"
+    size: "410MB"
+  
+  biobert_v1_1_base:
+    model_id: "dmis-lab/biobert-v1.1"
+    enabled: false
+    use_case: "Medical entity extraction (base)"
+    size: "410MB"
+  
+  # Gemini API (fallback)
+  gemini:
+    model: "gemini-2.5-flash"
+    max_tokens: 4096
+    enabled: true
+
+database:
+  type: "chromadb"
+  persist_directory: "./patient_db"
+  collection_name: "patient_history"
+
+safety:
+  emergency_keywords:
+    - "chest pain"
+    - "can't breathe"
+    - "unconscious"
+    - "severe bleeding"
+    - "stroke symptoms"
+  
+  disclaimer: |
+    IMPORTANT MEDICAL DISCLAIMER:
+    This AI assistant is for informational purposes only.
+    It is NOT a substitute for professional medical advice.
+    Always consult a qualified healthcare provider for medical decisions.
+    If you have a medical emergency, call emergency services immediately.
+
+learning:
+  enable_dpo: true
+  feedback_threshold: 100  # Min feedback before retraining
+  expert_review: false
+  checkpoint_dir: "./checkpoints"

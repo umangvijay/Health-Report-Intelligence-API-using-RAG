@@ -1,0 +1,20 @@
+{
+  "MedMCQA": {
+    "name": "MedMCQA - Medical Multiple Choice Questions",
+    "description": "194K multiple choice medical questions",
+    "size": "400MB",
+    "download_url": "https://drive.google.com/uc?export=download&id=15VkJdq5eyWIkfb_aoD3oS8i4tScbHYky",
+    "location": "ai_doctor_data\\medmcqa",
+    "status": "Ready for manual download",
+    "format": "JSON (train.json, test.json, dev.json)"
+  },
+  "DrugBank": {
+    "name": "DrugBank - Drug Interactions Database",
+    "description": "13K drugs, 900K drug interactions",
+    "size": "500MB",
+    "download_url": "https://go.drugbank.com/releases/latest",
+    "location": "ai_doctor_data\\drugbank",
+    "status": "Ready for manual download",
+    "format": "XML/JSON (drugbank.xml or drugbank.json)"
+  }
+}

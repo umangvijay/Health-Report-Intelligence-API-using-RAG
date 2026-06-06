@@ -1,0 +1,31 @@
+{
+  "report_id": "report_da6e8095d63d",
+  "filename": "sample_report.txt",
+  "full_text": "Cholesterol: 180 mg/dL\nHemoglobin: 14.5 g/dL",
+  "chunks": [
+    {
+      "chunk_id": "chunk_000",
+      "text": "Cholesterol: 180 mg/dL\nHemoglobin: 14.5 g/dL",
+      "page_number": 1
+    }
+  ],
+  "parameters": [
+    {
+      "parameter": "Hemoglobin",
+      "value": "14.5",
+      "unit": "g/dL",
+      "reference_range": "13.0 - 17.0",
+      "status": "normal"
+    },
+    {
+      "parameter": "Total Cholesterol",
+      "value": "180",
+      "unit": "mg/dL",
+      "reference_range": "< 200.0",
+      "status": "normal"
+    }
+  ],
+  "total_chunks": 1,
+  "extracted_parameters_count": 2,
+  "uploaded_at": "2026-06-06T10:06:03.002988"
+}

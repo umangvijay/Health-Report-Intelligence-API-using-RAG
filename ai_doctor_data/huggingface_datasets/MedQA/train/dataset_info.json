@@ -1,0 +1,94 @@
+{
+  "builder_name": "parquet",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "medqa",
+  "dataset_size": 11908925,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/openlifescienceai/medqa@153e61cdd129eb79d3c27f82cdf3bc5e018c11b0/data/train-00000-of-00001.parquet": {
+      "num_bytes": 5679350,
+      "checksum": null
+    },
+    "hf://datasets/openlifescienceai/medqa@153e61cdd129eb79d3c27f82cdf3bc5e018c11b0/data/test-00000-of-00001.parquet": {
+      "num_bytes": 739120,
+      "checksum": null
+    },
+    "hf://datasets/openlifescienceai/medqa@153e61cdd129eb79d3c27f82cdf3bc5e018c11b0/data/dev-00000-of-00001.parquet": {
+      "num_bytes": 719512,
+      "checksum": null
+    }
+  },
+  "download_size": 7137982,
+  "features": {
+    "id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "data": {
+      "Correct Answer": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "Correct Option": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "Options": {
+        "A": {
+          "dtype": "string",
+          "_type": "Value"
+        },
+        "B": {
+          "dtype": "string",
+          "_type": "Value"
+        },
+        "C": {
+          "dtype": "string",
+          "_type": "Value"
+        },
+        "D": {
+          "dtype": "string",
+          "_type": "Value"
+        }
+      },
+      "Question": {
+        "dtype": "string",
+        "_type": "Value"
+      }
+    },
+    "subject_name": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 19046907,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 9503782,
+      "num_examples": 10178,
+      "dataset_name": "medqa"
+    },
+    "test": {
+      "name": "test",
+      "num_bytes": 1215843,
+      "num_examples": 1273,
+      "dataset_name": "medqa"
+    },
+    "dev": {
+      "name": "dev",
+      "num_bytes": 1189300,
+      "num_examples": 1272,
+      "dataset_name": "medqa"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

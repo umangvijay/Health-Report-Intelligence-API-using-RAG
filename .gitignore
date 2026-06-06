@@ -1,0 +1,6 @@
+venv/
+.venv/
+sklearn-env/
+__pycache__/
+*.pyc
+ai_doctor_data/medmcqa/train.json

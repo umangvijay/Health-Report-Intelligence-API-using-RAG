@@ -1,0 +1,20 @@
+{
+  "train": {
+    "status": "success",
+    "samples": 182822,
+    "file_size_mb": 140.39678192138672,
+    "path": "ai_doctor_data\\medmcqa\\train.json"
+  },
+  "test": {
+    "status": "success",
+    "samples": 6150,
+    "file_size_mb": 1.7168397903442383,
+    "path": "ai_doctor_data\\medmcqa\\test.json"
+  },
+  "dev": {
+    "status": "success",
+    "samples": 4183,
+    "file_size_mb": 2.4743242263793945,
+    "path": "ai_doctor_data\\medmcqa\\dev.json"
+  }
+}

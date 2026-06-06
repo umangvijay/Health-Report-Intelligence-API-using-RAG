@@ -1,0 +1,39 @@
+# RLHF Training Configuration
+
+model:
+  name: "mistralai/Mistral-7B-Instruct-v0.1"
+  quantization: true
+  load_in_4bit: true
+  lora_enabled: true
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+
+training:
+  output_dir: "./rlhf_checkpoints"
+  num_epochs: 3
+  batch_size: 4
+  learning_rate: 1e-4
+  warmup_ratio: 0.03
+  weight_decay: 0.01
+  
+reward_model:
+  name: "reward_model_v1"
+  type: "binary_preference"  # binary_preference or scalar_reward
+
+ppo:
+  epochs: 4
+  mini_batch_size: 1
+  gradient_accumulation_steps: 4
+  learning_rate: 1.41e-5
+  adap_kl_ctrl: true
+  init_kl_coef: 0.2
+  target: 6
+  horizon: 10000
+  gamma: 1.0
+  lam: 0.95
+
+data:
+  dataset_name: "feedback_data"  # Or HF dataset
+  train_split: 0.8
+  val_split: 0.2

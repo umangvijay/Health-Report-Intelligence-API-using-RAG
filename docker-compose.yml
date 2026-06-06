@@ -1,0 +1,16 @@
+# AI Doctor API - run with: docker-compose up --build
+services:
+  api:
+    build: .
+    container_name: ai-doctor-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - PYTHONPATH=/app:/app/models
+    volumes:
+      # Persist ChromaDB, feedback, users
+      - ./ai_doctor_data:/app/ai_doctor_data
+      - ./users_db:/app/users_db
+    restart: unless-stopped

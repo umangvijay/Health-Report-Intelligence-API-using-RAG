@@ -1,0 +1,96 @@
+{
+  "timestamp": "2026-01-22T22:51:49.048334",
+  "datasets": {
+    "MedQA": {
+      "status": "success",
+      "samples": 10178,
+      "location": "ai_doctor_data\\huggingface_datasets\\MedQA"
+    },
+    "PubMedQA": {
+      "status": "skipped",
+      "note": "Dataset 'pubmedqa/pubmedqa' doesn't exist on the Hub or cannot be accessed."
+    }
+  },
+  "models": {
+    "Clinical-BERT": {
+      "status": "error",
+      "error": "medicalai/Clinical-BERT is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'\nIf this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`"
+    },
+    "BioBERT": {
+      "status": "success",
+      "model_id": "dmis-lab/biobert-base-cased-v1.2",
+      "device": "cpu"
+    },
+    "PubMedBERT": {
+      "status": "error",
+      "error": "microsoft/PubMedBERT is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'\nIf this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`"
+    },
+    "SciBERT": {
+      "status": "success",
+      "model_id": "allenai/scibert_scivocab_cased",
+      "device": "cpu"
+    },
+    "BioGPT": {
+      "status": "error",
+      "error": "You need to install sacremoses to use BioGptTokenizer. See https://pypi.org/project/sacremoses/ for installation."
+    },
+    "Mistral-7B": {
+      "status": "error",
+      "error": "Cannot instantiate this tokenizer from a slow version. If it's based on sentencepiece, make sure you have sentencepiece installed."
+    }
+  },
+  "errors": [],
+  "manual_datasets": [
+    {
+      "name": "MedMCQA",
+      "url": "https://drive.google.com/uc?export=download&id=15VkJdq5eyWIkfb_aoD3oS8i4tScbHYky",
+      "size": "400MB",
+      "description": "194K multiple choice questions",
+      "instructions": [
+        "1. Click the URL above",
+        "2. Download ZIP file",
+        "3. Extract to: ai_doctor_data\\medmcqa",
+        "4. Run: loader.load_medmcqa('path/to/train.json')"
+      ]
+    },
+    {
+      "name": "MIMIC-III",
+      "url": "https://physionet.org/content/mimiciii/1.4/",
+      "size": "6-8GB",
+      "description": "46K real patient records",
+      "instructions": [
+        "1. Register at: https://physionet.org/user/register/",
+        "2. Complete CITI training (1-2 hours)",
+        "3. Request access at URL above",
+        "4. Download after approval (instant)",
+        "5. Extract to: ai_doctor_data\\mimic-iii"
+      ],
+      "note": "\u26a0\ufe0f  Requires PhysioNet registration (free)"
+    },
+    {
+      "name": "DrugBank",
+      "url": "https://go.drugbank.com/releases/latest",
+      "size": "500MB",
+      "description": "13K drugs, 900K interactions",
+      "instructions": [
+        "1. Visit URL above",
+        "2. Download free version (no login required)",
+        "3. Save to: ai_doctor_data\\drugbank",
+        "4. Use for drug interaction checking"
+      ]
+    },
+    {
+      "name": "NIH ChestX-ray14",
+      "url": "https://nihcc.app.box.com/v/ChestXray-NIHCC/",
+      "size": "40GB",
+      "description": "112K chest X-ray images",
+      "instructions": [
+        "1. Visit URL above",
+        "2. Download image archives",
+        "3. Extract to: ai_doctor_data\\chestxray14",
+        "4. Use for radiology AI"
+      ],
+      "note": "\u26a0\ufe0f  Large download (40GB)"
+    }
+  ]
+}
