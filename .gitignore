@@ -1,0 +1,35 @@
+# Virtual environments
+venv/
+.venv/
+sklearn-env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment & secrets - NEVER commit these
+.env
+.env.local
+.env.production
+*.env
+
+# Large datasets
+ai_doctor_data/medmcqa/train.json
+
+# Local model files (too large for git)
+meditron/
+*.bin
+*.safetensors
+*.gguf
+*.pt
+*.pth
+model_cache/
+
+# User uploaded data
+uploaded_reports/
+users_db/
+
+# OS files
+.DS_Store
+Thumbs.db
